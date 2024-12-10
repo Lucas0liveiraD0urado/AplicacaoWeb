@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Psicólogos</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Lista de Psicólogos</h1>
+    {% for psicologo in psicologos %}
+        <div class="psicologo-card">
+            <h2 class="psicologo-nome">{{ psicologo.nome }}</h2>
+            <p class="psicologo-especializacao">{{ psicologo.especializacao }}</p>
+            <div class="ver-mais">
+                <a href="{% url 'psicologos:detalhe_psicologo' psicologo.id %}">
+                    <button type="button">Ver mais</button>
+                </a>
+            </div>
+        </div>
+    {% empty %}
+        <p>Nenhum psicólogo encontrado.</p>
+    {% endfor %}
+    
+    <div class="back-button">
+        <a href="{% url 'psicologos:home' %}">
+            <button type="button">Voltar para a Página Inicial</button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

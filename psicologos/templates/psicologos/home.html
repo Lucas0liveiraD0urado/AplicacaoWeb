@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bem-vindo à Clínica Viver</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="hero">
+    <h1 class="textomudar">Bem-vindo à Clínica Viver</h1>
+</div>
+
+<div class="container">
+    <h2>Sobre Nós</h2>
+    <p>Na Clínica Viver, oferecemos um espaço acolhedor e profissional para o cuidado da sua saúde mental.</p>
+    <p>Nossos psicólogos são altamente qualificados e estão prontos para ajudar você em sua jornada.</p>
+
+    <div class="button-container">
+        <a href="{% url 'psicologos:lista_psicologos' %}">
+            <button type="button">Conheça Nossos Psicólogos</button>
+        </a>
+        <a href="{% url 'psicologos:instituicao' %}">
+            <button type="button">Saiba Mais Sobre a Clínica</button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinica Viver</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>Clinica Viver</h1>
+    <p>Sua saúde mental é o alicerce para uma vida mais leve e feliz. Permita-se cuidar de você!</p>
+    <p><strong>Endereço:</strong> Rua das Flores, 123 - Bairro Jardim Serenidade Cidade Harmonia, Estado Conexão Humana - CEP: 12345-678</p>
+
+    <h2>História da Instituição</h2>
+    <p>A Clinica Viver foi fundada com o objetivo de proporcionar um espaço acolhedor e seguro para o cuidado da saúde mental. Desde a sua criação, a instituição tem se dedicado a oferecer suporte psicológico de qualidade, promovendo o bem-estar e a qualidade de vida de seus pacientes.</p>
+    
+    <p>Com uma equipe de profissionais altamente qualificados, a Clinica Viver busca atender às necessidades individuais de cada pessoa, oferecendo terapias personalizadas e um ambiente de respeito e empatia. Acreditamos que a saúde mental é fundamental para o desenvolvimento pessoal e social, e trabalhamos para desmistificar o estigma associado ao tratamento psicológico.</p>
+    
+    <p>Nosso compromisso é com a promoção da saúde mental, através de programas de prevenção, atendimento psicológico e atividades de conscientização. A Clinica Viver é mais do que um local de atendimento; é um espaço de transformação e esperança.</p>
+
+    <h2>Conheça nossos psicólogos:</h2>
+    <ul>
+        {% for psicologo in psicologos %}
+            <li>{{ psicologo.nome }} - {{ psicologo.especializacao }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'psicologos:home' %}">
+        <button type="button">Voltar para a Página Inicial</button>
+    </a>
+</div>
+
+</body>
+</html>

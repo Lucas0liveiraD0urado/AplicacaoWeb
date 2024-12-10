@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ psicologo.nome }}</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <h1>{{ psicologo.nome }}</h1>
+    <p class="especializacao">Especialização: {{ psicologo.especializacao }}</p>
+    <p class="formacao">Formação: {{ psicologo.formacao }}</p>
+
+    <a href="{% url 'psicologos:agendar_atendimento' psicologo.id %}">
+        <button type="button">Agendar Atendimento</button>
+    </a>
+
+    <div class="back-button">
+        <a href="{% url 'psicologos:lista_psicologos' %}">
+            <button type="button">Voltar para a Lista de Psicólogos</button>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
